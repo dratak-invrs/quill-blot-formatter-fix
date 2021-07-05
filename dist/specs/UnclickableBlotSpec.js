@@ -72,7 +72,8 @@ var UnclickableBlotSpec = function (_BlotSpec) {
         this prevents the click event from overlapping with ImageSpec
          */
         //document.body.appendChild(this.createProxyImage());
-        this.formatter.quill.appendChild(this.createProxyImage());
+        //console.log(JSON.stringify(this.formatter.quill));
+        this.formatter.quill.container.appendChild(this.createProxyImage());
       }
 
       this.hideProxyImage();

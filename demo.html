@@ -35,6 +35,12 @@
 
 
 <div id="scrolling-container">
+  <div id="statusFormToolbar" class="ql-toolbar ql-snow">
+    <span class="ql-formats">
+      <button class="ql-image" type="button"></button>
+      <button class="ql-video" type="button"></button>
+    </span>
+  </div>
   <div id="quill-container">
     <p>Hi! Here is an image...</p>
     <p><img src="https://kittenrescue.org/wp-content/uploads/2017/03/KittenRescue_KittenCareHandbook.jpg" /></p>
@@ -52,6 +58,7 @@
     theme: 'snow',
     scrollingContainer: '#scrolling-container',
     modules: {
+      toolbar: "#statusFormToolbar",
       blotFormatter: {
       }
     }
