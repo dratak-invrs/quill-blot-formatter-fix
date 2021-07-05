@@ -25,7 +25,8 @@ export default class UnclickableBlotSpec extends BlotSpec {
       it's important that this is attached to the body instead of the root quill element.
       this prevents the click event from overlapping with ImageSpec
        */
-      document.body.appendChild(this.createProxyImage());
+      //document.body.appendChild(this.createProxyImage());
+      this.formatter.quill.appendChild(this.createProxyImage());
     }
 
     this.hideProxyImage();
@@ -73,7 +74,7 @@ export default class UnclickableBlotSpec extends BlotSpec {
 
   repositionProxyImage(unclickable: HTMLElement) {
     const rect = unclickable.getBoundingClientRect();
-
+    //document.getElementById("myH1").style['z-index'];
     Object.assign(
       this.proxyImage.style,
       {
@@ -82,6 +83,7 @@ export default class UnclickableBlotSpec extends BlotSpec {
         top: `${rect.top + window.pageYOffset}px`,
         width: `${rect.width}px`,
         height: `${rect.height}px`,
+       // ['z-index']: `${unclickable.getAt`
       },
     );
   }

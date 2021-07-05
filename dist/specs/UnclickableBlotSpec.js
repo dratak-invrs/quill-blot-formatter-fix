@@ -71,7 +71,8 @@ var UnclickableBlotSpec = function (_BlotSpec) {
         it's important that this is attached to the body instead of the root quill element.
         this prevents the click event from overlapping with ImageSpec
          */
-        document.body.appendChild(this.createProxyImage());
+        //document.body.appendChild(this.createProxyImage());
+        this.formatter.quill.appendChild(this.createProxyImage());
       }
 
       this.hideProxyImage();
@@ -125,13 +126,14 @@ var UnclickableBlotSpec = function (_BlotSpec) {
     key: 'repositionProxyImage',
     value: function repositionProxyImage(unclickable) {
       var rect = unclickable.getBoundingClientRect();
-
+      //document.getElementById("myH1").style['z-index'];
       Object.assign(this.proxyImage.style, {
         display: 'block',
         left: rect.left + window.pageXOffset + 'px',
         top: rect.top + window.pageYOffset + 'px',
         width: rect.width + 'px',
         height: rect.height + 'px'
+        // ['z-index']: `${unclickable.getAt`
       });
     }
   }]);
